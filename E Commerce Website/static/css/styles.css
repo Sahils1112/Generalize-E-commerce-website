@@ -1,0 +1,102 @@
+
+body{
+   background-color: rgb(255, 255, 255);
+}
+
+.navbar ul{
+   width: 63%;
+   justify-content: right;
+}
+.nav-item{
+   font-weight: bold;
+   margin-left: 2%;
+}
+.navbar-brand{
+   font-weight: bolder;
+   font-size: 2.3rem;
+   margin-left: 3%;
+}
+.banner-container{
+   background-image: url('https://www.launch-marketing.com/wp-content/uploads/2017/08/GettyImages-518310016.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 90vh;
+   color:whitesmoke;
+}
+.dashboard{
+   /* margin-top: 5%; */
+   display: inline-block;
+   position: absolute;
+   width: 28%;
+   margin-left: 0%;
+   height: 100vh;
+   padding-left: 3.8%;
+   background-color: white;
+   margin-top: 0.3%;
+   height: 89vh;
+
+}
+.dashboard h3{
+   margin-top: 4%;
+}
+
+.dashboard .accordion-item{
+   margin-top: 3%;
+}
+
+.dashboard-container {
+   width: 71%;
+   border: 2px solid black;
+   margin-right: 0.5%;
+   margin-top: 0.3%;
+   background-color: white;
+   padding: 5%;
+   padding-top: 1.5%;
+   height: 89vh;
+
+}
+.dashboard-container h1 {
+   font-size: 5rem;
+}
+.dashboard-info div{
+   margin-top: 10%;
+   height:25vh;
+}
+.dashboard-info h1{
+   font-size: 4rem;
+}
+
+
+
+/* Service Container */
+.service-container{
+   /* border: 2px solid black; */
+   height: 50vh;
+   margin-top: 3%;
+   justify-content: center;
+   margin-bottom: 5%;
+}
+.service-heading{
+   text-align: center;
+}
+.services-Details{
+   margin-left: 3%;
+}
+.service-col{
+   width: 29%;
+   /* height: 40vh; */
+   padding: 3%;
+   transition: transform .2s; /* Animation */
+
+}
+.service-col:hover {
+   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+ }
+
+ /* It's the item of both Products and Business Store */
+ .item {
+   transition: transform .2s;
+ }
+ .item:hover{
+   transform: scale(1.05);
+ }

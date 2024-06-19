@@ -1,0 +1,80 @@
+{% include "header.html" %}
+{% include "sidebar.html" %}
+<div class="container dashboard-container">
+   <div class="row">
+      <h2>Edit Product</h2>
+   </div>
+   <div class="row mt-4">
+    {% for product in productDetails %}
+    <div class="card p-0 me-2" style="width: 30%;height:55vh" id="content">
+      <img  src="../static/productImages/{{product.Image}}"  class="card-img-top w-100" style="height:25vh;" alt="...">
+      <div class="card-body">
+        
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <h5>Name:</h5>
+                <p>Price:</p>
+                <p>Quantity:</p>
+                <p>Description:</p>
+              </td>
+              <td>
+                <h5>{{ product.product_name }}</h5>
+                <p>₹{{ product.product_price }}</p>
+                <p>{{ product.product_quantity }}</p>
+                <p>{{ product.product_description }}</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ product.id }}">
+                  Edit Product
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% for product_item in productDetails %}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal{{ product_item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ product_item.id }}" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel{{ product_item.id }}">{{ product_item.product_name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mt-4">
+              <form action="/editProduct" method="post">
+                <input type="hidden" value="{{ product_item.id }}" name="productId">
+                 <div class="mb-3">
+                   <label for="productName" class="form-label fw-bold">Product Name</label>
+                   <input id="productName" class="form-control form-control-lg" type="text" placeholder="Name" aria-label=".form-control-lg example" value="{{ product_item.product_name }}" name="product_name">
+                 </div>
+                 <div class="mb-3">
+                    <label for="productPrice" class="form-label fw-bold">Product Price</label>
+                    <input id="productPrice" class="form-control form-control-lg" type="number" placeholder="Price" aria-label=".form-control-lg example" value="{{ product_item.product_price }}" name="product_price">
+                  </div>
+                  <div class="mb-3">
+                    <label for="productQuantity" class="form-label fw-bold">Product Quantity</label>
+                    <input id="productQuantity" class="form-control form-control-lg" type="text" placeholder="Quantity" aria-label=".form-control-lg example" value="{{ product_item.product_quantity }}" name="product_Quantity">
+                  </div>
+                  <div class="mb-3">
+                    <label for="productDescription" class="form-label fw-bold">Product Description</label>
+                    <textarea id="productDescription" class="form-control" rows="3" name="product_Description">{{ product_item.product_description }}</textarea>
+                  </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+   </div>
+</div>
+{% include "footer.html" %}

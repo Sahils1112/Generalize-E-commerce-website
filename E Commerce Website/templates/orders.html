@@ -1,0 +1,37 @@
+{% include "header.html" %}
+
+<div class="container">
+   <h1 class="text-center mt-3 mb-3 fw-bolder">Orders</h1>
+   <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Order Id</th>
+          <th scope="col">Product Id</th>
+          <th scope="col">Product Price</th>
+          <th scope="col">Product Quantity</th>
+          <th scope="col">Total Price</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Order Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <th scope="row">{{ order.id }}</th>
+          <td>{{ order.productId }}</td>
+          <td>{{ order.totalPrice / order.quantity }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>₹{{ order.totalPrice }}</td>
+          <td>{{ order.date }}</td>
+          <td>{{ order.orderStatus }}</td>
+      
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+
+
+{% include "footer.html" %}

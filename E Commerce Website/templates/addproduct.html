@@ -1,0 +1,37 @@
+{% include "header.html" %}
+{% include "sidebar.html" %}
+<div class="container dashboard-container">
+   <div class="row">
+      <h2>Add Product</h2>
+
+   </div>
+   <div class="row mt-4">
+      <form action="/addProduct" method="POST" enctype="multipart/form-data">
+         <div class="mb-3">
+           <label for="exampleInputEmail1" class="form-label fw-bold">Product Name</label>
+           <input class="form-control form-control-lg" type="text" placeholder="Name" aria-label=".form-control-lg example" name="name">
+         </div>
+         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bold">Product Price</label>
+            <input class="form-control form-control-lg" type="number" placeholder="Price" aria-label=".form-control-lg example" name="price">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bold">Product Quantity</label>
+            <input class="form-control form-control-lg" type="text" placeholder="Quantity" aria-label=".form-control-lg example" name="Quantity">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bold">Product Image</label>
+            <input class="form-control form-control-lg" type="file" placeholder="Image" aria-label=".form-control-lg example" name="Image">
+          </div>
+      
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label fw-bold">Product Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Description"></textarea>
+          </div>
+         <button type="submit" class="btn btn-primary">Add</button>
+       </form>
+   </div>
+
+</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,25 @@
+{% include "header.html" %}
+
+<div class="container-fluid p-3">
+    <div class="row text-center m-3 mb-4">
+        <h1>Business Stores</h1>
+    </div>
+    <div class="row mb-4">
+        {% for business in allBusinessData %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="../static/storeImages/{{business.Image}}" alt="" style="height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{business.businessName}}</h5>
+                    <p class="card-text">{{business.Description}}</p>
+                    <form action="/products/{{ business.id }}" method="GET">
+                        <button class="btn btn-outline-dark w-100" type="submit">View Products</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,38 @@
+{% include "header.html" %}
+    
+    <div class="container-fluid banner-container text-center">
+            <h1 class="fw-bolder display-3 pt-5">Welcome to ShopHub</h1>
+            <h3> Where Every Click Leads to Satisfaction!</h3>
+    </div>
+
+    <div class="container service-container ">
+        <div class="row service-heading">
+        <h1 class="fw-bolder display-3">Services</h1>
+    </div>
+    <div class="row services-Details text-center">
+        <div class="col-lg-3 col-sm-12  service-col me-5 mt-3 shadow-sm border rounded">
+            <i class="fa-solid fa-store fa-7x mb-4  mt-3"></i>
+            <p>Shop the best featured products from your trusted store.</p>
+            <button class="btn btn-primary w-75 p-2 rounded-pill" onclick="window.location.href='{{ url_for('store') }}'">Search Store</button>
+        </div>
+        <div class="col-lg-3 col-sm-12  service-col me-5 mt-3 shadow-sm border rounded">
+            <i class="fas fa-search fa-7x mb-4  mt-3"></i>
+
+            <p>All you need is here! just search for it</p>
+            <button class="btn btn-primary w-75 p-2 rounded-pill" onclick="window.location.href='/products/0'">Search Product</button>
+            
+        </div>
+        <div class="col-lg-3 col-sm-12  service-col me-5 mt-3 shadow-sm border rounded">
+            <i class="fa-solid fa-cart-shopping fa-7x mb-4 mt-3"></i>
+
+            <p>order your favourite product</p>
+            <button class="btn btn-primary w-75 p-2 rounded-pill" onclick="window.location.href='{{ url_for('orders') }}'">My Orders</button>
+        </div>
+    </div>
+        
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+{% include "footer.html" %}

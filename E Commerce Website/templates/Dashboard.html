@@ -1,0 +1,19 @@
+{% include "header.html" %}
+{% include "sidebar.html" %}
+
+<div class="container dashboard-container">
+   <h1 class="text-center ">Welcome To Store</h1>
+   <div class="row justify-content-center dashboard-info">
+      <div class="col-lg-3 border me-5 rounded p-3 bg-light">
+         <h4>Total Products</h4>
+         <h1 class="text-center mt-4">{{productCount}}</h1>
+      </div>
+      <div class="col-lg-3 border me-5 rounded p-3 bg-light">
+         <h4>Total Orders</h4>
+         <h1 class="text-center mt-4">{{orderscount}}</h1>
+      </div>
+   </div>
+</div>
+
+
+{% include "footer.html" %}
